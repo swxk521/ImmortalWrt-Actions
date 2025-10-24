@@ -20,7 +20,8 @@ sed -i '$a src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' fee
 git clone https://github.com/sirpdboy/luci-app-eqosplus package/luci-app-eqosplus
 git clone https://github.com/sirpdboy/luci-app-taskplan package/luci-app-taskplan
 git clone https://github.com/sirpdboy/luci-app-timecontrol package/luci-app-timecontrol
-git clone https://github.com/swxk521/luci-app-onliner package/luci-app-onliner
+git clone https://github.com/timsaya/luci-app-bandix package/luci-app-bandix
+git clone https://github.com/timsaya/openwrt-bandix package/openwrt-bandix
 git clone https://github.com/swxk521/diy package/diy
 
 
