@@ -11,8 +11,14 @@
 #
 
 # Modify default IP
-#sed -i 's/192.168.1.1/192.168.50.5/g' package/base-files/files/bin/config_generate
-# sed -i 's/192.168.1.1/10.10.10.100/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
+sed -i 's/default 160/default 8000/g' config/Config-images.in
+
+
+# passwall2
+sed -n 's/^PKG_VERSION:=//p' feeds/passwall2/luci-app-passwall2/Makefile | xargs -I {} sed -i "s/DIYVERSION/{}/g" feeds/diyy/passwall2Makefile
+sed -n 's/^PKG_RELEASE:=//p' feeds/passwall2/luci-app-passwall2/Makefile | xargs -I {} sed -i "s/DIYRELEASE/{}/g" feeds/diyy/passwall2Makefile
+cp -f feeds/diyy/passwall2Makefile feeds/passwall2/luci-app-passwall2/Makefile
 
 # Enable r8125 ASPM
 # cp -f $GITHUB_WORKSPACE/010-config.patch package/kernel/r8125/patches/010-config.patch
