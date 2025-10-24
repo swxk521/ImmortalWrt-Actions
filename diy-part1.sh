@@ -23,6 +23,11 @@ git clone https://github.com/sirpdboy/luci-app-timecontrol package/luci-app-time
 git clone https://github.com/swxk521/luci-app-onliner package/luci-app-onliner
 git clone https://github.com/swxk521/diy package/diy
 
+# Update Golang
+git clone -b master --single-branch https://github.com/immortalwrt/packages.git packages_master
+rm -rf ./feeds/packages/lang/golang
+mv ./packages_master/lang/golang ./feeds/packages/lang
+
 #Add external packages
 # svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/others/luci-app-amlogic
 # svn co https://github.com/QiuSimons/openwrt-mos/trunk/v2ray-geodata package/others/v2ray-geodata
