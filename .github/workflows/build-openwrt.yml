@@ -182,6 +182,12 @@ jobs:
           name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin
 
+      - name: Upload passwall2
+        uses: actions/upload-artifact@v4
+        with:
+          name: passwall2${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+          path: openwrt/bin/packages/x86_64/passwall2/*passwall*
+
       - name: Organize files
         id: organize
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true' && !cancelled()
@@ -210,7 +216,7 @@ jobs:
           commit: main
           artifacts: ${{ env.FIRMWARE }}/*
           body: |
-            - 默认IP：10.10.10.100 默认密码：无
+            - 默认IP：192.168.5.1 默认密码：无
             - 当前使用版本:【编译前的最后一次[➦主源码](https://github.com/immortalwrt/immortalwrt/tree/openwrt-24.10)更新记录】
             ${{ env.useVersionInfo }}
 
