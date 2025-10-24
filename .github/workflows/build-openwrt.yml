@@ -188,6 +188,18 @@ jobs:
           name: passwall2${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin/packages/x86_64/passwall2/*passwall*
 
+      - name: Upload efi.img.gz
+        uses: actions/upload-artifact@v4
+        with:
+          name: efi.img.gz${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+          path: openwrt/bin/targets/x86/64/*squashfs-combined-efi.img.gz
+
+      - name: Upload img.gz
+        uses: actions/upload-artifact@v4
+        with:
+          name: img.gz${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+          path: openwrt/bin/targets/x86/64/*squashfs-combined.img.gz
+
       - name: Organize files
         id: organize
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_FIRMWARE == 'true' && !cancelled()
