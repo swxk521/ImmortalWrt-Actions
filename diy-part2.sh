@@ -14,6 +14,7 @@
 sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generate
 sed -i 's/default 160/default 8000/g' config/Config-images.in
 cp -f feeds/diy/targetMakefile target/linux/x86/Makefile
+cp -f feeds/diy/99-sysctl.conf package/base-files/files/etc/sysctl.d/99-sysctl.conf
 
 # passwall2
 sed -n 's/^PKG_VERSION:=//p' feeds/passwall2/luci-app-passwall2/Makefile | xargs -I {} sed -i "s/DIYVERSION/{}/g" feeds/diy/passwall2Makefile
