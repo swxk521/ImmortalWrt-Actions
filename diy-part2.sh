@@ -45,8 +45,10 @@ cp -f package/diy/passwall2Makefile feeds/passwall2/luci-app-passwall2/Makefile
 #bash <( curl -sSL https://build-scripts.immortalwrt.eu.org/create_acl_for_luci.sh ) -a
 #rm -rf ./tmp
 
-# Update Golang
 git clone -b master --single-branch https://github.com/immortalwrt/packages.git packages_master
 rm -rf ./feeds/packages/lang/golang
 mv ./packages_master/lang/golang ./feeds/packages/lang
-
+rm -rf ./feeds/packages/net/xray-core
+mv ./packages_master/net/xray-core ./feeds/packages/net
+rm -rf ./feeds/packages/net/geoview
+mv ./packages_master/net/geoview ./feeds/packages/net
