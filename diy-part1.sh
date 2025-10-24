@@ -15,8 +15,13 @@
 
 # Add a feed source
 #sed -i '$a src-git mosdns https://github.com/Gzxhwq/openwrt-mos;dev' feeds.conf.default
-sed -i '$a src-git my_packages https://github.com/Gzxhwq/openwrt-packages' feeds.conf.default
-# sed -i '$a src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
+sed -i '$a src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
+sed -i '$a src-git taskplan https://github.com/sirpdboy/luci-app-taskplan' feeds.conf.default
+sed -i '$a src-git eqosplus https://github.com/sirpdboy/luci-app-eqosplus' feeds.conf.default
+sed -i '$a src-git timecontrol https://github.com/sirpdboy/luci-app-timecontrol' feeds.conf.default
+sed -i '$a src-git onliner https://github.com/swxk521/luci-app-onliner' feeds.conf.default
+sed -i '$a src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' feeds.conf.default
+sed -i '$a src-git diyy https://github.com/swxk521/diyy' feeds.conf.default
 
 #Add external packages
 # svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/others/luci-app-amlogic
