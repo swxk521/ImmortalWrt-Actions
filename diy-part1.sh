@@ -21,7 +21,7 @@ sed -i '$a src-git eqosplus https://github.com/sirpdboy/luci-app-eqosplus' feeds
 sed -i '$a src-git timecontrol https://github.com/sirpdboy/luci-app-timecontrol' feeds.conf.default
 sed -i '$a src-git onliner https://github.com/swxk521/luci-app-onliner' feeds.conf.default
 sed -i '$a src-git passwall2 https://github.com/xiaorouji/openwrt-passwall2' feeds.conf.default
-sed -i '$a src-git diyy https://github.com/swxk521/diy' feeds.conf.default
+sed -i '$a src-git diy https://github.com/swxk521/diy' feeds.conf.default
 
 #Add external packages
 # svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/others/luci-app-amlogic
