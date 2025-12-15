@@ -176,26 +176,26 @@ jobs:
         run: df -hT
 
       - name: Upload bin directory
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: steps.compile.outputs.status == 'success' && env.UPLOAD_BIN_DIR == 'true'
         with:
           name: OpenWrt_bin${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin
 
       - name: Upload passwall2
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: passwall2${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin/packages/x86_64/passwall2/*passwall*
 
       - name: Upload efi.img.gz
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: efi.img.gz${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin/targets/x86/64/*squashfs-combined-efi.img.gz
 
       - name: Upload img.gz
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: img.gz${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
           path: openwrt/bin/targets/x86/64/*squashfs-combined.img.gz
@@ -210,7 +210,7 @@ jobs:
           echo "status=success" >> $GITHUB_OUTPUT
 
       - name: Upload firmware directory
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         if: steps.organize.outputs.status == 'success' && !cancelled()
         with:
           name: OpenWrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
